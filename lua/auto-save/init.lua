@@ -121,6 +121,7 @@ function M.on()
   })
   autocmds.create_autocmd_for_trigger_events(events.defer_save, {
     callback = function(opts)
+      logger.log(buf, "....................... events triggered")
       if should_be_saved(opts.buf) then
         defer_save(opts.buf)
       end

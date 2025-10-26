@@ -6,7 +6,7 @@ Config = {
       --- @type TriggerEvent[]?
       immediate_save = { "BufLeave", "FocusLost", "QuitPre", "VimSuspend" }, -- vim events that trigger an immediate save
       --- @type TriggerEvent[]?
-      defer_save = { "InsertLeave", "TextChanged" }, -- vim events that trigger a deferred save (saves after `debounce_delay`)
+      defer_save = { "InsertLeave", "TextChangedI", "TextChanged" }, -- vim events that trigger a deferred save (saves after `debounce_delay`)
       --- @type TriggerEvent[]?
       cancel_deferred_save = { "InsertEnter" }, -- vim events that cancel a pending deferred save
     },
@@ -22,6 +22,7 @@ Config = {
     debounce_delay = 1000, -- delay after which a pending save is executed
     -- log debug messages to 'auto-save.log' file in neovim cache directory, set to `true` to enable
     debug = false, -- print debug messages, set to `true` to enable
+    debug = true, -- print debug messages, set to `true` to enable
   },
 }
 
